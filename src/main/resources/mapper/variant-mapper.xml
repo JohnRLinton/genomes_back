@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.biodb.genomes.dao.VariantDao">
+    <select id="findVariantByPos" resultType="com.biodb.genomes.entity.Variant">
+        select CHROM,POS,ID,REF,ALT,INFO from 1000genomes.chr${chr}dbsnpnonegt where POS between ${startpos} and ${endpos}
+    </select>
+</mapper>

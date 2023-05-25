@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.biodb.genomes.dao.SampleDao">
+    <select id="findAll" resultType="com.biodb.genomes.entity.Sample">
+        select `Sample name` as sampleName,Sex as sex,`Biosample ID` as bioID, `Population code` as populationCode,`Population name` as populationName,`Superpopulation code` as SuperpopulationCode,`Superpopulation name` as SuperpopulationName,`Population elastic ID` as populationId,`Data collections` as dataCollection from 1000genomes.samples limit 2504
+    </select>
+
+    <select id="findSampleByCondition" resultType="com.biodb.genomes.entity.Sample">
+        SELECT `Sample name` as sampleName,Sex as sex,`Biosample ID` as bioID, `Population code` as populationCode,`Population name` as populationName,`Superpopulation code` as SuperpopulationCode,`Superpopulation name` as SuperpopulationName,`Population elastic ID` as populationId,`Data collections` as dataCollection FROM 1000genomes.samples WHERE Sex LIKE '%${sex}%' AND `Population code` LIKE '%${populationCode}%' AND `Superpopulation code` LIKE '%${SuperpopulationCode}%'
+    </select>
+</mapper>

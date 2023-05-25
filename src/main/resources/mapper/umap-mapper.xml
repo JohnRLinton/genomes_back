@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.biodb.genomes.dao.UmapDao">
+    <select id="findAllUmap" resultType="com.biodb.genomes.entity.Umap">
+        SELECT `Individual ID` as IndividualID,UMAP0,UMAP1,Population,Super FROM 1000genomes.umap
+    </select>
+
+    <select id="findEASUmap" resultType="com.biodb.genomes.entity.Umap">
+        SELECT `Individual ID` as IndividualID,UMAP0,UMAP1,Population,Super FROM 1000genomes.umap WHERE umap.Population in('CDX','CHB','CHS','JPT','KHV')
+    </select>
+
+    <select id="findSASUmap" resultType="com.biodb.genomes.entity.Umap">
+        SELECT `Individual ID` as IndividualID,UMAP0,UMAP1,Population,Super FROM 1000genomes.umap WHERE umap.Population in('BEB','GIH','ITU','PJL','STU')
+    </select>
+
+    <select id="findEURUmap" resultType="com.biodb.genomes.entity.Umap">
+        SELECT `Individual ID` as IndividualID,UMAP0,UMAP1,Population,Super FROM 1000genomes.umap WHERE umap.Population in('CEU','FIN','GBR','IBS','TSI')
+    </select>
+
+    <select id="findAFRUmap" resultType="com.biodb.genomes.entity.Umap">
+        SELECT `Individual ID` as IndividualID,UMAP0,UMAP1,Population,Super FROM 1000genomes.umap WHERE umap.Population in('ACB','ASW','ESN','GWD','LWK','MSL','YRI')
+    </select>
+
+    <select id="findAMRUmap" resultType="com.biodb.genomes.entity.Umap">
+        SELECT `Individual ID` as IndividualID,UMAP0,UMAP1,Population,Super FROM 1000genomes.umap WHERE umap.Population in('CLM','MXL','PEL','PUR')
+    </select>
+</mapper>
